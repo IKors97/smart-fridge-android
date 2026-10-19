@@ -1,22 +1,21 @@
 name: Build Smart Fridge APK
 
-on:
-workflow_dispatch:
-push:
-branches:
-- main
-- master
+ on:
+ workflow_dispatch:
+ push:
+ branches:
+ - main
+ - master
 
-permissions:
-contents: read
+ permissions:
+ contents: read
 
-jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Download repository
-uses: actions/checkout@v4
-
+ jobs:
+ build:
+ runs-on: ubuntu-latest
+ steps:
+  - name: Download repository
+    uses: actions/checkout@v4
   - name: Unpack Android project
     run: unzip -o -q SmartFridge-GitHub-APK.zip
 
